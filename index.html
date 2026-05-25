@@ -12,8 +12,8 @@
 <meta property="og:type" content="website">
 <link rel="canonical" href="https://plaengnamnak.com/">
 <link rel="icon" href="favicon.ico" type="image/x-icon">
-<!-- Google AdSense -->
-<!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXX" crossorigin="anonymous"></script> -->
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1063556443578237" crossorigin="anonymous"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700&family=Noto+Serif+Thai:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
@@ -23,12 +23,26 @@
   --border:#E4E4E0; --border2:#D4D4CF;
   --text:#1A1917; --text2:#706F6B; --text3:#B0AFA9;
   --ink:#1A1917; --accent:#2563EB;
+  --header-bg:rgba(255,255,255,0.92); --logo-fill:#1A1917;
+}
+[data-theme="dark"] {
+  --bg:#0F0F0F; --bg2:#1A1A1A; --bg3:#222222;
+  --border:#2A2A2A; --border2:#333333;
+  --text:#F0EFE8; --text2:#9A9890; --text3:#555450;
+  --ink:#F0EFE8; --accent:#60A5FA;
+  --header-bg:rgba(15,15,15,0.92); --logo-fill:#F0EFE8;
 }
 html { scroll-behavior:smooth; }
-body { font-family:'Sarabun',sans-serif; background:var(--bg); color:var(--text); min-height:100vh; line-height:1.6; -webkit-font-smoothing:antialiased; }
+body { font-family:'Sarabun',sans-serif; background:var(--bg); color:var(--text); min-height:100vh; line-height:1.6; -webkit-font-smoothing:antialiased; transition:background .3s,color .3s; }
 
-header { position:sticky; top:0; z-index:100; background:rgba(255,255,255,0.92); backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px); border-bottom:1px solid var(--border); height:52px; display:flex; align-items:center; padding:0 24px; }
-.logo { font-family:'Noto Serif Thai',serif; font-size:20px; font-weight:700; color:var(--ink); }
+header { position:sticky; top:0; z-index:100; background:var(--header-bg); backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px); border-bottom:1px solid var(--border); height:56px; display:flex; align-items:center; padding:0 20px; gap:10px; }
+.header-logo { display:flex; align-items:center; gap:10px; text-decoration:none; flex:1; }
+.logo-icon svg { width:32px; height:32px; display:block; }
+.logo-text { display:flex; flex-direction:column; line-height:1.1; }
+.logo-text-th { font-family:'Noto Serif Thai',serif; font-size:16px; font-weight:700; color:var(--text); }
+.logo-text-en { font-size:10px; font-weight:500; color:var(--text3); letter-spacing:1.5px; text-transform:uppercase; }
+.dark-toggle { width:36px; height:36px; border:1.5px solid var(--border); border-radius:50%; background:transparent; cursor:pointer; display:flex; align-items:center; justify-content:center; transition:all .2s; color:var(--text2); flex-shrink:0; }
+.dark-toggle:hover { border-color:var(--border2); color:var(--text); }
 
 .ad-strip { background:var(--bg2); border-bottom:1px solid var(--border); display:flex; justify-content:center; padding:8px 16px; }
 .ad-728 { width:100%; max-width:728px; height:90px; background:var(--bg); border:1.5px dashed var(--border2); border-radius:4px; display:flex; align-items:center; justify-content:center; color:var(--text3); font-size:12px; }
@@ -43,7 +57,7 @@ header { position:sticky; top:0; z-index:100; background:rgba(255,255,255,0.92);
 /* Mode tabs */
 .mode-tabs { display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-bottom:28px; }
 .mode-tab { padding:12px 8px; border:1.5px solid var(--border); border-radius:9px; background:var(--bg); font-family:'Sarabun',sans-serif; font-size:15px; font-weight:600; color:var(--text2); cursor:pointer; text-align:center; transition:all .15s; }
-.mode-tab.active { border-color:var(--ink); background:var(--ink); color:#fff; }
+.mode-tab.active { border-color:var(--ink); background:var(--ink); color:var(--bg); }
 .mode-tab:hover:not(.active) { border-color:var(--border2); }
 
 .field-label { font-size:13px; font-weight:600; color:var(--text2); letter-spacing:0.3px; margin-bottom:8px; display:block; }
@@ -64,7 +78,7 @@ hr.section-hr { border:none; border-top:1px solid var(--border); margin:24px 0; 
 @media(max-width:400px){.unit-btn-grid{grid-template-columns:repeat(3,1fr);}}
 .unit-btn { padding:8px 4px; border:1.5px solid var(--border); border-radius:8px; background:var(--bg); font-family:'Sarabun',sans-serif; font-size:13px; font-weight:500; color:var(--text2); cursor:pointer; text-align:center; transition:all .15s; line-height:1.3; }
 .unit-btn:hover:not(.active) { border-color:var(--border2); color:var(--text); }
-.unit-btn.active { border-color:var(--ink); background:var(--ink); color:#fff; font-weight:600; }
+.unit-btn.active { border-color:var(--ink); background:var(--ink); color:var(--bg); font-weight:600; }
 
 .arrow-divider { display:flex; align-items:center; padding:4px 20px; }
 .arrow-line { flex:1; height:1.5px; background:var(--border); }
@@ -93,7 +107,7 @@ hr.section-hr { border:none; border-top:1px solid var(--border); margin:24px 0; 
 .btn-share { width:100%; padding:12px; background:transparent; border:1.5px solid var(--border); border-radius:9px; font-family:'Sarabun',sans-serif; font-size:14px; color:var(--text2); cursor:pointer; margin-bottom:16px; display:flex; align-items:center; justify-content:center; gap:8px; transition:all .15s; }
 .btn-share:hover { border-color:var(--ink); color:var(--ink); }
 
-.toast { position:fixed; bottom:24px; left:50%; transform:translateX(-50%) translateY(80px); background:var(--ink); color:#fff; padding:10px 20px; border-radius:8px; font-size:14px; font-weight:500; transition:transform .3s ease; z-index:999; pointer-events:none; }
+.toast { position:fixed; bottom:24px; left:50%; transform:translateX(-50%) translateY(80px); background:var(--ink); color:var(--bg); padding:10px 20px; border-radius:8px; font-size:14px; font-weight:500; transition:transform .3s ease; z-index:999; pointer-events:none; }
 .toast.show { transform:translateX(-50%) translateY(0); }
 
 .info-section { border-top:1px solid var(--border); padding-top:32px; }
@@ -104,11 +118,40 @@ hr.section-hr { border:none; border-top:1px solid var(--border); margin:24px 0; 
 footer { border-top:1px solid var(--border); padding:24px 20px; text-align:center; font-size:13px; color:var(--text3); }
 footer a { color:var(--text3); text-decoration:none; }
 footer a:hover { color:var(--text2); text-decoration:underline; }
+
+.share-row { display:grid; grid-template-columns:1fr 1fr 1fr; gap:8px; margin-bottom:12px; }
+.btn-share-action { padding:11px 8px; border-radius:9px; border:1.5px solid var(--border); background:transparent; font-family:'Sarabun',sans-serif; font-size:13px; font-weight:600; color:var(--text2); cursor:pointer; display:flex; align-items:center; justify-content:center; transition:all .15s; }
+.btn-share-action:hover { border-color:var(--border2); color:var(--text); }
 </style>
 </head>
 <body>
 
-<header><span class="logo">แปลงหน่วยน้ำหนัก</span></header>
+<header>
+  <a class="header-logo" href="/">
+    <div class="logo-icon">
+      <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="32" height="32" rx="7" fill="var(--logo-fill)"/>
+        <text x="5" y="24" font-family="Arial Black, sans-serif" font-size="22" font-weight="900" fill="var(--bg)">K</text>
+        <text x="14" y="27" font-family="Arial, sans-serif" font-size="8" font-weight="700" fill="var(--bg)">+×=</text>
+      </svg>
+    </div>
+    <div class="logo-text">
+      <span class="logo-text-th">คำนวณ</span>
+      <span class="logo-text-en">KAMNUAN</span>
+    </div>
+  </a>
+  <button class="dark-toggle" onclick="toggleDark()" title="เปลี่ยนธีม">
+    <svg id="iconSun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none">
+      <circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+      <line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+    </svg>
+    <svg id="iconMoon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+    </svg>
+  </button>
+</header>
 
 <div class="ad-strip">
   <div class="ad-728">📢 Google AdSense — 728×90 Leaderboard (Top)</div>
@@ -153,7 +196,11 @@ footer a:hover { color:var(--text2); text-decoration:underline; }
         <div class="conv-result-unit" id="aResultUnit">เลือกหน่วยและกรอกตัวเลข</div>
       </div>
     </div>
-    <button class="btn-share" onclick="aCopy()">📋 คัดลอกผลลัพธ์เพื่อแชร์</button>
+    <div class="share-row">
+      <button class="btn-share-action" onclick="window.open('https://line.me/R/msg/text/?'+encodeURIComponent(getAText()),'_blank')">Line</button>
+      <button class="btn-share-action" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent('https://pntsm12.github.io/kamnuannamnak/'),'_blank')">Facebook</button>
+      <button class="btn-share-action" onclick="aCopy()">คัดลอก</button>
+    </div>
   </div>
 
   <!-- ── PANEL B ── -->
@@ -204,7 +251,11 @@ footer a:hover { color:var(--text2); text-decoration:underline; }
     </div>
 
     <hr class="section-hr">
-    <button class="btn-share" onclick="bCopy()">📋 คัดลอกผลลัพธ์เพื่อแชร์</button>
+    <div class="share-row">
+      <button class="btn-share-action" onclick="window.open('https://line.me/R/msg/text/?'+encodeURIComponent(getBText()),'_blank')">Line</button>
+      <button class="btn-share-action" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent('https://pntsm12.github.io/kamnuannamnak/'),'_blank')">Facebook</button>
+      <button class="btn-share-action" onclick="bCopy()">คัดลอก</button>
+    </div>
   </div>
 
   <div class="ad-mid">
@@ -242,6 +293,11 @@ footer a:hover { color:var(--text2); text-decoration:underline; }
 <div class="toast" id="toast">คัดลอกแล้ว!</div>
 
 <script>
+function initTheme(){const s=localStorage.getItem('theme');const p=window.matchMedia('(prefers-color-scheme: dark)').matches;applyTheme(s||(p?'dark':'light'));}
+function applyTheme(t){document.documentElement.setAttribute('data-theme',t);document.getElementById('iconSun').style.display=t==='dark'?'block':'none';document.getElementById('iconMoon').style.display=t==='light'?'block':'none';localStorage.setItem('theme',t);}
+function toggleDark(){applyTheme(document.documentElement.getAttribute('data-theme')==='dark'?'light':'dark');}
+initTheme();
+
 /* ── Conversion factors to kg ── */
 const TO_KG = { kg:1, g:0.001, mg:0.000001, lb:0.45359237, oz:0.0283495, st:6.35029, t:1000 };
 const NAMES = { kg:'กิโลกรัม', g:'กรัม', mg:'มิลลิกรัม', lb:'ปอนด์', oz:'ออนซ์', st:'หิน (stone)', t:'ตัน' };
@@ -308,6 +364,16 @@ function aConvert() {
   document.getElementById('aResultUnit').textContent = NAMES[aTo];
 }
 
+function getAText() {
+  const val = parseFloat(document.getElementById('aInput').value);
+  if (!val) return '';
+  const result = (val * TO_KG[aFrom]) / TO_KG[aTo];
+  return fmtNum(val) + ' ' + NAMES[aFrom] + ' = ' + fmtNum(result) + ' ' + NAMES[aTo] + '\nแปลงได้ที่ plaengnamnak.com';
+}
+function getBText() {
+  if (!bKg) return '';
+  return 'แปลงหน่วยน้ำหนัก\n' + KEYS.map(k => fmtNum(bKg/TO_KG[k]) + ' ' + NAMES[k]).join('\n') + '\nแปลงได้ที่ plaengnamnak.com';
+}
 function aCopy() {
   const val = parseFloat(document.getElementById('aInput').value);
   if (!val) { alert('กรุณากรอกค่าก่อน'); return; }
