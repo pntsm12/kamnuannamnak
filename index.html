@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="google-site-verification" content="BcwokyN2W4FMCCIj4YbvGcFCJojtQgojttCnNHCTtL4" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>แปลงหน่วยน้ำหนักออนไลน์</title>
+<meta name="description" content="แปลงหน่วยน้ำหนักออนไลน์ฟรี กิโลกรัม กรัม ปอนด์ ออนซ์ หิน มิลลิกรัม กรอกหน่วยเดียวแปลงทุกหน่วยทันที ใช้งานง่าย ไม่ต้องโหลดแอป">
+<meta name="keywords" content="แปลงหน่วยน้ำหนัก, กิโลกรัม, ปอนด์, ออนซ์, กรัม, หิน, น้ำหนัก">
+<meta property="og:title" content="แปลงหน่วยน้ำหนักออนไลน์">
+<meta property="og:description" content="แปลงหน่วยน้ำหนักออนไลน์ฟรี กิโลกรัม กรัม ปอนด์ ออนซ์ หิน แปลงทุกหน่วยทันที">
+<meta property="og:type" content="website">
+<link rel="canonical" href="https://plaengnamnak.com/">
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<!-- Google AdSense -->
+<!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXX" crossorigin="anonymous"></script> -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700&family=Noto+Serif+Thai:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing:border-box; margin:0; padding:0; }
+:root {
+  --bg:#FFFFFF; --bg2:#F7F7F5; --bg3:#F0EFEC;
+  --border:#E4E4E0; --border2:#D4D4CF;
+  --text:#1A1917; --text2:#706F6B; --text3:#B0AFA9;
+  --ink:#1A1917; --accent:#2563EB;
+}
+html { scroll-behavior:smooth; }
+body { font-family:'Sarabun',sans-serif; background:var(--bg); color:var(--text); min-height:100vh; line-height:1.6; -webkit-font-smoothing:antialiased; }
+
+header { position:sticky; top:0; z-index:100; background:rgba(255,255,255,0.92); backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px); border-bottom:1px solid var(--border); height:52px; display:flex; align-items:center; padding:0 24px; }
+.logo { font-family:'Noto Serif Thai',serif; font-size:20px; font-weight:700; color:var(--ink); }
+
+.ad-strip { background:var(--bg2); border-bottom:1px solid var(--border); display:flex; justify-content:center; padding:8px 16px; }
+.ad-728 { width:100%; max-width:728px; height:90px; background:var(--bg); border:1.5px dashed var(--border2); border-radius:4px; display:flex; align-items:center; justify-content:center; color:var(--text3); font-size:12px; }
+@media(max-width:600px){.ad-728{height:60px;}}
+.ad-mid { display:flex; justify-content:center; margin:28px 0; }
+
+.page-wrap { max-width:640px; margin:0 auto; padding:40px 20px 64px; }
+.page-heading { margin-bottom:28px; }
+.page-heading h1 { font-family:'Noto Serif Thai',serif; font-size:clamp(32px,7vw,48px); font-weight:700; color:var(--ink); line-height:1.15; letter-spacing:-0.8px; }
+.page-heading p { margin-top:8px; font-size:15px; color:var(--text2); }
+
+/* Mode tabs */
+.mode-tabs { display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-bottom:28px; }
+.mode-tab { padding:12px 8px; border:1.5px solid var(--border); border-radius:9px; background:var(--bg); font-family:'Sarabun',sans-serif; font-size:15px; font-weight:600; color:var(--text2); cursor:pointer; text-align:center; transition:all .15s; }
+.mode-tab.active { border-color:var(--ink); background:var(--ink); color:#fff; }
+.mode-tab:hover:not(.active) { border-color:var(--border2); }
+
+.field-label { font-size:13px; font-weight:600; color:var(--text2); letter-spacing:0.3px; margin-bottom:8px; display:block; }
+hr.section-hr { border:none; border-top:1px solid var(--border); margin:24px 0; }
+
+/* Panel A — Simple */
+#panelA { display:block; }
+#panelB { display:none; }
+
+.conv-card { border:1.5px solid var(--border); border-radius:12px; overflow:hidden; margin-bottom:16px; }
+.conv-section { padding:20px; }
+.conv-input-wrap { display:flex; align-items:center; border:1.5px solid var(--border); border-radius:8px; overflow:hidden; background:var(--bg); transition:border-color .15s,box-shadow .15s; }
+.conv-input-wrap:focus-within { border-color:var(--accent); box-shadow:0 0 0 3px rgba(37,99,235,0.1); }
+.conv-input-wrap input { flex:1; padding:12px 14px; border:none; outline:none; font-family:'Sarabun',sans-serif; font-size:22px; font-weight:700; color:var(--ink); background:transparent; width:100%; }
+.conv-input-wrap input::placeholder { color:var(--text3); font-weight:400; font-size:16px; }
+
+.unit-btn-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:6px; }
+@media(max-width:400px){.unit-btn-grid{grid-template-columns:repeat(3,1fr);}}
+.unit-btn { padding:8px 4px; border:1.5px solid var(--border); border-radius:8px; background:var(--bg); font-family:'Sarabun',sans-serif; font-size:13px; font-weight:500; color:var(--text2); cursor:pointer; text-align:center; transition:all .15s; line-height:1.3; }
+.unit-btn:hover:not(.active) { border-color:var(--border2); color:var(--text); }
+.unit-btn.active { border-color:var(--ink); background:var(--ink); color:#fff; font-weight:600; }
+
+.arrow-divider { display:flex; align-items:center; padding:4px 20px; }
+.arrow-line { flex:1; height:1.5px; background:var(--border); }
+.arrow-icon { font-size:26px; color:var(--ink); padding:0 16px; line-height:1; }
+
+.conv-result { background:var(--bg2); border-top:1px solid var(--border); padding:20px; text-align:center; }
+.conv-result-num { font-family:'Noto Serif Thai',serif; font-size:40px; font-weight:700; color:var(--ink); letter-spacing:-1px; line-height:1.1; }
+.conv-result-unit { font-size:15px; color:var(--text2); margin-top:6px; }
+
+/* Panel B — All */
+.all-input-group { margin-bottom:10px; }
+.all-input-row { display:flex; align-items:center; border:1.5px solid var(--border); border-radius:8px; overflow:hidden; background:var(--bg); transition:border-color .15s,box-shadow .15s; }
+.all-input-row.active-row { border-color:var(--accent); box-shadow:0 0 0 3px rgba(37,99,235,0.1); }
+.all-input-row input { flex:1; padding:11px 14px; border:none; outline:none; font-family:'Sarabun',sans-serif; font-size:18px; font-weight:600; color:var(--ink); background:transparent; width:100%; }
+.all-unit-label { padding:0 16px; font-size:14px; font-weight:600; color:var(--text2); white-space:nowrap; border-left:1px solid var(--border); background:var(--bg2); min-height:46px; display:flex; align-items:center; gap:4px; }
+.unit-th { font-size:15px; color:var(--ink); }
+.unit-en { font-size:11px; color:var(--text3); }
+
+/* Ref table */
+.ref-table { width:100%; border-collapse:collapse; font-size:14px; margin-top:12px; }
+.ref-table th { text-align:left; padding:10px 14px; font-size:11px; font-weight:600; color:var(--text3); letter-spacing:0.5px; border-bottom:1.5px solid var(--border); background:var(--bg2); }
+.ref-table td { padding:10px 14px; border-bottom:1px solid var(--border); color:var(--text2); }
+.ref-table tr:last-child td { border-bottom:none; }
+.ref-table td:first-child { font-weight:600; color:var(--ink); }
+
+.btn-share { width:100%; padding:12px; background:transparent; border:1.5px solid var(--border); border-radius:9px; font-family:'Sarabun',sans-serif; font-size:14px; color:var(--text2); cursor:pointer; margin-bottom:16px; display:flex; align-items:center; justify-content:center; gap:8px; transition:all .15s; }
+.btn-share:hover { border-color:var(--ink); color:var(--ink); }
+
+.toast { position:fixed; bottom:24px; left:50%; transform:translateX(-50%) translateY(80px); background:var(--ink); color:#fff; padding:10px 20px; border-radius:8px; font-size:14px; font-weight:500; transition:transform .3s ease; z-index:999; pointer-events:none; }
+.toast.show { transform:translateX(-50%) translateY(0); }
+
+.info-section { border-top:1px solid var(--border); padding-top:32px; }
+.info-section h2 { font-family:'Noto Serif Thai',serif; font-size:18px; font-weight:700; color:var(--ink); margin-bottom:8px; }
+.info-section h2.mt { margin-top:24px; }
+.info-section p { font-size:14px; color:var(--text2); line-height:1.85; }
+
+footer { border-top:1px solid var(--border); padding:24px 20px; text-align:center; font-size:13px; color:var(--text3); }
+footer a { color:var(--text3); text-decoration:none; }
+footer a:hover { color:var(--text2); text-decoration:underline; }
+</style>
+</head>
+<body>
+
+<header><span class="logo">แปลงหน่วยน้ำหนัก</span></header>
+
+<div class="ad-strip">
+  <div class="ad-728">📢 Google AdSense — 728×90 Leaderboard (Top)</div>
+</div>
+
+<div class="page-wrap">
+
+  <div class="page-heading">
+    <h1>แปลงหน่วยน้ำหนัก</h1>
+    <p>แปลงหน่วยน้ำหนักได้ทันที รองรับกิโลกรัม ปอนด์ ออนซ์ กรัม และอีกหลายหน่วย</p>
+  </div>
+
+  <div class="mode-tabs">
+    <button class="mode-tab active" id="tabA" onclick="showPanel('A')">เลือกหน่วยที่ต้องการ</button>
+    <button class="mode-tab" id="tabB" onclick="showPanel('B')">ดูทุกหน่วยพร้อมกัน</button>
+  </div>
+
+  <!-- ── PANEL A ── -->
+  <div id="panelA">
+    <div class="conv-card">
+      <div class="conv-section">
+        <span class="field-label">กรอกตัวเลข</span>
+        <div class="conv-input-wrap">
+          <input type="number" id="aInput" placeholder="กรอกตัวเลข" min="0" inputmode="decimal" oninput="aConvert()">
+        </div>
+      </div>
+      <div class="conv-section" style="padding-top:0;">
+        <span class="field-label">จากหน่วย</span>
+        <div class="unit-btn-grid" id="aFromGrid"></div>
+      </div>
+      <div class="arrow-divider">
+        <div class="arrow-line"></div>
+        <div class="arrow-icon">↓</div>
+        <div class="arrow-line"></div>
+      </div>
+      <div class="conv-section" style="padding-top:0;">
+        <span class="field-label">แปลงเป็น</span>
+        <div class="unit-btn-grid" id="aToGrid"></div>
+      </div>
+      <div class="conv-result">
+        <div class="conv-result-num" id="aResultNum">–</div>
+        <div class="conv-result-unit" id="aResultUnit">เลือกหน่วยและกรอกตัวเลข</div>
+      </div>
+    </div>
+    <button class="btn-share" onclick="aCopy()">📋 คัดลอกผลลัพธ์เพื่อแชร์</button>
+  </div>
+
+  <!-- ── PANEL B ── -->
+  <div id="panelB">
+    <span class="field-label">กรอกค่าในช่องใดช่องหนึ่ง ช่องอื่นจะอัปเดตทันที</span>
+
+    <div class="all-input-group" id="bGrp-kg">
+      <div class="all-input-row" id="bRow-kg">
+        <input type="number" id="b-kg" min="0" inputmode="decimal" oninput="bConvert('kg')" onfocus="bFocus('kg')" onblur="bBlur()">
+        <div class="all-unit-label"><span class="unit-th">กิโลกรัม</span><span class="unit-en">kg</span></div>
+      </div>
+    </div>
+    <div class="all-input-group" id="bGrp-g">
+      <div class="all-input-row" id="bRow-g">
+        <input type="number" id="b-g" min="0" inputmode="decimal" oninput="bConvert('g')" onfocus="bFocus('g')" onblur="bBlur()">
+        <div class="all-unit-label"><span class="unit-th">กรัม</span><span class="unit-en">g</span></div>
+      </div>
+    </div>
+    <div class="all-input-group" id="bGrp-mg">
+      <div class="all-input-row" id="bRow-mg">
+        <input type="number" id="b-mg" min="0" inputmode="decimal" oninput="bConvert('mg')" onfocus="bFocus('mg')" onblur="bBlur()">
+        <div class="all-unit-label"><span class="unit-th">มิลลิกรัม</span><span class="unit-en">mg</span></div>
+      </div>
+    </div>
+    <div class="all-input-group" id="bGrp-lb">
+      <div class="all-input-row" id="bRow-lb">
+        <input type="number" id="b-lb" min="0" inputmode="decimal" oninput="bConvert('lb')" onfocus="bFocus('lb')" onblur="bBlur()">
+        <div class="all-unit-label"><span class="unit-th">ปอนด์</span><span class="unit-en">lb</span></div>
+      </div>
+    </div>
+    <div class="all-input-group" id="bGrp-oz">
+      <div class="all-input-row" id="bRow-oz">
+        <input type="number" id="b-oz" min="0" inputmode="decimal" oninput="bConvert('oz')" onfocus="bFocus('oz')" onblur="bBlur()">
+        <div class="all-unit-label"><span class="unit-th">ออนซ์</span><span class="unit-en">oz</span></div>
+      </div>
+    </div>
+    <div class="all-input-group" id="bGrp-st">
+      <div class="all-input-row" id="bRow-st">
+        <input type="number" id="b-st" min="0" inputmode="decimal" oninput="bConvert('st')" onfocus="bFocus('st')" onblur="bBlur()">
+        <div class="all-unit-label"><span class="unit-th">หิน</span><span class="unit-en">stone</span></div>
+      </div>
+    </div>
+    <div class="all-input-group" id="bGrp-t">
+      <div class="all-input-row" id="bRow-t">
+        <input type="number" id="b-t" min="0" inputmode="decimal" oninput="bConvert('t')" onfocus="bFocus('t')" onblur="bBlur()">
+        <div class="all-unit-label"><span class="unit-th">ตัน</span><span class="unit-en">t</span></div>
+      </div>
+    </div>
+
+    <hr class="section-hr">
+    <button class="btn-share" onclick="bCopy()">📋 คัดลอกผลลัพธ์เพื่อแชร์</button>
+  </div>
+
+  <div class="ad-mid">
+    <div class="ad-728">📢 Google AdSense — 728×90 Leaderboard (In-content)</div>
+  </div>
+
+  <div class="info-section">
+    <h2>ตารางเทียบหน่วยน้ำหนัก</h2>
+    <table class="ref-table">
+      <thead><tr><th>หน่วย</th><th>เท่ากับ (กิโลกรัม)</th><th>ใช้บ่อยในสถานการณ์</th></tr></thead>
+      <tbody>
+        <tr><td>1 กิโลกรัม (kg)</td><td>1 กก.</td><td>ชีวิตประจำวัน ความเร็ว สุขภาพ</td></tr>
+        <tr><td>1 กรัม (g)</td><td>0.001 กก.</td><td>อาหาร ยา เครื่องประดับ</td></tr>
+        <tr><td>1 ปอนด์ (lb)</td><td>0.4536 กก.</td><td>สายฟิตเนส สินค้าจากต่างประเทศ</td></tr>
+        <tr><td>1 ออนซ์ (oz)</td><td>0.02835 กก.</td><td>อาหาร เครื่องดื่ม ทองคำ</td></tr>
+        <tr><td>1 หิน (stone)</td><td>6.35 กก.</td><td>น้ำหนักตัวในอังกฤษ</td></tr>
+        <tr><td>1 ตัน (t)</td><td>1,000 กก.</td><td>ยานพาหนะ สินค้าอุตสาหกรรม</td></tr>
+      </tbody>
+    </table>
+    <h2 class="mt">วิธีใช้เครื่องแปลงหน่วยน้ำหนัก</h2>
+    <p>มี 2 โหมด โหมด "เลือกหน่วยที่ต้องการ" เหมาะสำหรับแปลงหน่วยเดียวไปยังอีกหน่วยหนึ่ง โหมด "ดูทุกหน่วยพร้อมกัน" เหมาะสำหรับดูค่าทุกหน่วยในครั้งเดียว</p>
+  </div>
+
+  <div class="ad-mid" style="margin-bottom:0;">
+    <div class="ad-728">📢 Google AdSense — 728×90 Leaderboard (Bottom)</div>
+  </div>
+
+</div>
+
+<footer>
+  <p>© 2568 แปลงหน่วยน้ำหนักออนไลน์ · <a href="#">นโยบายความเป็นส่วนตัว</a> · <a href="#">ติดต่อ</a></p>
+  <p style="margin-top:4px;">ผลลัพธ์เป็นการคำนวณทางคณิตศาสตร์</p>
+</footer>
+
+<div class="toast" id="toast">คัดลอกแล้ว!</div>
+
+<script>
+/* ── Conversion factors to kg ── */
+const TO_KG = { kg:1, g:0.001, mg:0.000001, lb:0.45359237, oz:0.0283495, st:6.35029, t:1000 };
+const NAMES = { kg:'กิโลกรัม', g:'กรัม', mg:'มิลลิกรัม', lb:'ปอนด์', oz:'ออนซ์', st:'หิน (stone)', t:'ตัน' };
+const KEYS  = ['kg','g','mg','lb','oz','st','t'];
+
+let aFrom = 'kg';
+let aTo   = 'lb';
+let aKg   = 0;
+let bKg   = 0;
+
+function fmtNum(n) {
+  if (n === 0) return '0';
+  if (n >= 1)    return parseFloat(n.toFixed(4)).toString();
+  if (n >= 0.01) return parseFloat(n.toFixed(6)).toString();
+  return parseFloat(n.toFixed(8)).toString();
+}
+
+/* ── Panel switch ── */
+function showPanel(p) {
+  document.getElementById('panelA').style.display = p === 'A' ? 'block' : 'none';
+  document.getElementById('panelB').style.display = p === 'B' ? 'block' : 'none';
+  document.getElementById('tabA').classList.toggle('active', p === 'A');
+  document.getElementById('tabB').classList.toggle('active', p === 'B');
+}
+
+/* ── Build Panel A buttons ── */
+const aFromGrid = document.getElementById('aFromGrid');
+const aToGrid   = document.getElementById('aToGrid');
+
+KEYS.forEach(k => {
+  const bf = document.createElement('button');
+  bf.className = 'unit-btn' + (k === aFrom ? ' active' : '');
+  bf.textContent = NAMES[k].split(' ')[0];
+  bf.onclick = () => {
+    aFrom = k;
+    aFromGrid.querySelectorAll('.unit-btn').forEach((b,i) => b.classList.toggle('active', KEYS[i]===k));
+    aConvert();
+  };
+  aFromGrid.appendChild(bf);
+
+  const bt = document.createElement('button');
+  bt.className = 'unit-btn' + (k === aTo ? ' active' : '');
+  bt.textContent = NAMES[k].split(' ')[0];
+  bt.onclick = () => {
+    aTo = k;
+    aToGrid.querySelectorAll('.unit-btn').forEach((b,i) => b.classList.toggle('active', KEYS[i]===k));
+    aConvert();
+  };
+  aToGrid.appendChild(bt);
+});
+
+/* ── Panel A convert ── */
+function aConvert() {
+  const val = parseFloat(document.getElementById('aInput').value);
+  if (!val || val <= 0) {
+    aKg = 0;
+    document.getElementById('aResultNum').textContent  = '–';
+    document.getElementById('aResultUnit').textContent = 'เลือกหน่วยและกรอกตัวเลข';
+    return;
+  }
+  aKg = val * TO_KG[aFrom];
+  const result = aKg / TO_KG[aTo];
+  document.getElementById('aResultNum').textContent  = fmtNum(result);
+  document.getElementById('aResultUnit').textContent = NAMES[aTo];
+}
+
+function aCopy() {
+  const val = parseFloat(document.getElementById('aInput').value);
+  if (!val) { alert('กรุณากรอกค่าก่อน'); return; }
+  const result = (val * TO_KG[aFrom]) / TO_KG[aTo];
+  copyText(`${fmtNum(val)} ${NAMES[aFrom]} = ${fmtNum(result)} ${NAMES[aTo]}\nแปลงได้ที่ plaengnamnak.com`);
+}
+
+/* ── Panel B convert ── */
+function bConvert(unit) {
+  const val = parseFloat(document.getElementById('b-' + unit).value);
+  if (!val || val <= 0) {
+    bKg = 0;
+    KEYS.forEach(k => { if (k !== unit) document.getElementById('b-' + k).value = ''; });
+    return;
+  }
+  bKg = val * TO_KG[unit];
+  KEYS.forEach(k => {
+    if (k === unit) return;
+    document.getElementById('b-' + k).value = fmtNum(bKg / TO_KG[k]);
+  });
+}
+
+function bFocus(unit) {
+  KEYS.forEach(k => document.getElementById('bRow-' + k).classList.toggle('active-row', k === unit));
+}
+
+function bBlur() {
+  KEYS.forEach(k => document.getElementById('bRow-' + k).classList.remove('active-row'));
+}
+
+function bCopy() {
+  if (!bKg) { alert('กรุณากรอกค่าก่อน'); return; }
+  const lines = KEYS.map(k => `${fmtNum(bKg/TO_KG[k])} ${NAMES[k]}`).join('\n');
+  copyText(`แปลงหน่วยน้ำหนัก\n${lines}\nแปลงได้ที่ plaengnamnak.com`);
+}
+
+function copyText(text) {
+  navigator.clipboard.writeText(text).then(showToast).catch(() => {
+    const ta = document.createElement('textarea');
+    ta.value = text; document.body.appendChild(ta);
+    ta.select(); document.execCommand('copy');
+    document.body.removeChild(ta); showToast();
+  });
+}
+
+function showToast() {
+  const t = document.getElementById('toast');
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 2500);
+}
+</script>
+</body>
+</html>
