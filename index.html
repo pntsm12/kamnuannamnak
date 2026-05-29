@@ -240,12 +240,11 @@ let updating=false;
 
 function fmtW(n){
   if(n===0||isNaN(n)) return '';
-  if(Math.abs(n)>=1) return parseFloat(n.toPrecision(7)).toString().replace(/\.?0+$/,'');
-  return parseFloat(n.toPrecision(4)).toString();
+  return parseFloat(n.toPrecision(8)).toString();
 }
 
 function convert(src){
-  if(updating) return;
+  if(updating)return;
   updating=true;
   const val=parseFloat(document.getElementById('f-'+src).value);
   if(isNaN(val)||val<0){UNITS.filter(u=>u!==src).forEach(u=>document.getElementById('f-'+u).value='');updating=false;return;}
